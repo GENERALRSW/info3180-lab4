@@ -1,20 +1,60 @@
+/* ===========================
+   INFO3180 Lab 4 - app.css
+   =========================== */
+
 body {
-    padding-top: 5rem;
+  padding-top: 70px; /* offset fixed navbar */
 }
 
+/* ---- Login form ---- */
 .form-login {
-    max-width: 330px;
-    padding: 15px;
+  max-width: 420px;
+  padding: 2rem;
 }
 
-.form-login input[type="text"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+/* ---- Page headers ---- */
+.page-header {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
 }
 
-.form-login input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+/* ---- Image Grid ---- */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.image-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  aspect-ratio: 1 / 1;
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.image-item img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
 }
